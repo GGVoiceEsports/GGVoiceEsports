@@ -1,0 +1,788 @@
+/* Genel Ayarlar */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    color: #fff;
+    overflow-x: hidden; /* Yatay kaydırmayı engelle */
+}
+
+header {
+    background-color: #111;
+    padding: 5px 30px;
+    display: flex;
+    justify-content: flex-start; /* Butonları logoya yaklaştırır */
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+
+header .logo img {
+    width: 80px;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: nowrap; /* Butonların kaymasını önler */
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #e60000;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #e60000;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav .btn {
+    background-color: #e60000;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+nav .btn:hover {
+    background-color: #ff1a1a;
+    transform: scale(1.05);
+}
+
+/* Ana Sayfa Bölümü */
+.hero {
+    background-color: #222;
+    padding: 100px 30px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    color: #e60000;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+.hero p {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+
+
+.hero .btn {
+    background-color: #e60000;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #ff1a1a;
+    transform: scale(1.1);
+}
+
+/* Hakkımızda Sayfası */
+.about {
+    background-color: #333;
+    padding: 60px 30px;
+    animation: fadeIn 2s ease-out;
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+    animation: slideIn 1s ease-out;
+}
+
+.about p {
+    text-align: center;
+    font-size: 18px;
+    color: #ccc;
+}
+
+/* Takımlar Sayfası */
+.teams {
+    background-color: #333;
+    padding: 60px 30px;
+    animation: fadeIn 2s ease-out;
+}
+
+.teams h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+    animation: slideIn 1s ease-out;
+}
+
+.team-member {
+    text-align: center;
+    margin: 30px 0;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.team-member h3 {
+    font-size: 24px;
+    color: #e60000;
+}
+
+.team-member p {
+    font-size: 18px;
+    color: #ccc;
+}
+
+/* Takıma Katıl Formu */
+.join {
+    background-color: #333;
+    padding: 60px 30px;
+    animation: fadeIn 2s ease-out;
+}
+
+.join h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+    animation: slideIn 1s ease-out;
+}
+
+.join form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.join form label {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.join form input, .join form select, .join form textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    transition: border 0.3s ease;
+}
+
+.join form input:focus, .join form select:focus, .join form textarea:focus {
+    border-color: #e60000;
+}
+
+.join form textarea {
+    height: 150px;
+}
+
+.join form button {
+    padding: 12px 25px;
+    background-color: #e60000;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.join form button:hover {
+    background-color: #ff1a1a;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    padding: 20px 30px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scrollbar Geliştirme */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #222;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #e60000;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ff1a1a;
+}
+/* Başvuru Başarılı Mesajı */
+.success-message {
+    background-color: #28a745;
+    color: #fff;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.neon-text {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    color: #ff0000; /* Kırmızı Neon */
+    text-shadow: 
+        0 0 1px #e60000, 
+        0 0 2px #ff1a1a, 
+        0 0 0px #ff3333, 
+        0 0 40px #ff4d4d;
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+/* Neon Parlama Animasyonu */
+@keyframes neonGlow {
+    from {
+        text-shadow: 
+            0 0 5px #e60000, 
+            0 0 10px #ff1a1a, 
+            0 0 20px #ff3333, 
+            0 0 40px #ff4d4d;
+    }
+    to {
+        text-shadow: 
+            0 0 10px #ff1a1a, 
+            0 0 20px #ff3333, 
+            0 0 30px #ff4d4d, 
+            0 0 50px #ff6666;
+    }
+}
+/* Ramazan Özel Sayfası */
+.ramazan-hero {
+    background: url('./images/ramazan-bg.jpg') no-repeat center center/cover;
+    padding: 120px 30px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.ramazan-hero .content h1 {
+    font-size: 60px;
+    color: #ffcc00; /* Altın Sarısı Neon */
+    text-shadow: 
+        0 0 10px #ffcc00, 
+        0 0 20px #ffdd55, 
+        0 0 30px #ffee77, 
+        0 0 50px #fff;
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+.ramazan-hero p {
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+/* İftar & Sahur Kartları */
+.ramazan-times {
+    background: #222;
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.ramazan-times h2 {
+    font-size: 36px;
+    color: #ffcc00;
+}
+
+.time-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.time-card {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+    width: 200px;
+    text-align: center;
+}
+
+.time-card h3 {
+    font-size: 24px;
+    color: #ffcc00;
+}
+
+.time-card p {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    margin-top: 10px;
+}
+
+/* Ramazan Duası */
+.ramazan-dua {
+    background: #444;
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.ramazan-dua h2 {
+    font-size: 32px;
+    color: #ffcc00;
+}
+
+.ramazan-dua p {
+    font-size: 20px;
+    color: white;
+    font-style: italic;
+    margin-top: 15px;
+}
+.countdown {
+    font-size: 18px;
+    color: #ffcc00;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.ramazan-times {
+    padding: 50px 30px;
+    text-align: center;
+    background-color: #222;
+}
+
+.time-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.time-card {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+/* Mobil Uyumluluk İçin Genel Ayarlar */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Mobilde biraz daha küçük font boyutu */
+        padding: 0 10px;
+    }
+
+    /* Header düzenlemeleri */
+    header {
+        padding: 10px 20px;
+        height: 80px; /* Yüksekliği biraz arttırıyoruz */
+        justify-content: space-between; /* Logo ve menüyü daha yaygın hale getiriyoruz */
+    }
+
+    header .logo img {
+        width: 60px; /* Logo boyutunu küçültüyoruz */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+    nav ul li a {
+        font-size: 16px; /* Menü öğelerinin boyutunu küçültüyoruz */
+    }
+
+    /* Hero (Ana Sayfa Bölümü) */
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 40px; /* Başlık boyutunu küçültüyoruz */
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero .btn {
+        font-size: 16px;
+    }
+
+    /* Hakkımızda Sayfası */
+    .about {
+        padding: 40px 20px;
+    }
+
+    .about h2 {
+        font-size: 28px;
+    }
+
+    .about p {
+        font-size: 16px;
+    }
+
+    /* Takımlar Sayfası */
+    .teams {
+        padding: 40px 20px;
+    }
+
+    .teams h2 {
+        font-size: 28px;
+    }
+
+    .team-member img {
+        width: 150px; /* Üyelerin görsellerinin boyutunu küçültüyoruz */
+        height: 150px;
+    }
+
+    .team-member h3 {
+        font-size: 20px;
+    }
+
+    .team-member p {
+        font-size: 16px;
+    }
+
+    /* Takıma Katıl Formu */
+    .join {
+        padding: 40px 20px;
+    }
+
+    .join h2 {
+        font-size: 28px;
+    }
+
+    .join form {
+        width: 100%;
+    }
+
+    .join form input, .join form select, .join form textarea {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .join form button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 10px 20px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+
+    /* Ramazan Özel Sayfası */
+    .ramazan-hero {
+        padding: 100px 20px;
+    }
+
+    .ramazan-hero .content h1 {
+        font-size: 40px;
+    }
+
+    .ramazan-hero p {
+        font-size: 18px;
+    }
+
+    /* İftar & Sahur Kartları */
+    .ramazan-times {
+        padding: 40px 20px;
+    }
+
+    .ramazan-times h2 {
+        font-size: 28px;
+    }
+
+    .time-cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .time-card {
+        width: 100%;
+        max-width: 300px; /* Kartların genişliğini sınırlıyoruz */
+        padding: 15px;
+    }
+
+    .time-card h3 {
+        font-size: 22px;
+    }
+
+    .time-card p {
+        font-size: 24px;
+    }
+
+    /* Ramazan Duası */
+    .ramazan-dua {
+        padding: 40px 20px;
+    }
+
+    .ramazan-dua h2 {
+        font-size: 28px;
+    }
+
+    .ramazan-dua p {
+        font-size: 18px;
+    }
+
+    /* Mobilde scroll bar'ın daha küçük olması */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+}
+
+/* Daha küçük cihazlar için (telefonlar) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Daha küçük font boyutu */
+    }
+
+    /* Hero başlık ve butonları daha da küçültüyoruz */
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero .btn {
+        font-size: 14px;
+    }
+
+    .ramazan-hero .content h1 {
+        font-size: 30px;
+    }
+
+    .ramazan-hero p {
+        font-size: 16px;
+    }
+
+    .time-card h3 {
+        font-size: 20px;
+    }
+
+    .time-card p {
+        font-size: 22px;
+    }
+
+    /* Footer */
+    footer p {
+        font-size: 10px;
+    }
+
+    /* Takım Üyeleri Kartları */
+    .team-member img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .team-member h3 {
+        font-size: 18px;
+    }
+
+    .team-member p {
+        font-size: 14px;
+    }
+}
+
+/* Genel Yan Menü Stil */
+.sidebar {
+    height: 100%;
+    width: 250px; /* Menü genişliği */
+    position: fixed;
+    top: 0;
+    left: -250px; /* Başlangıçta gizli */
+    background-color: #111;
+    z-index: 100;
+    transition: 0.3s ease; /* Geçiş efekti */
+    padding-top: 60px; /* Menü öğeleri arasındaki boşluk */
+    overflow-y: auto; /* İçerik taşarsa kaydırma */
+}
+
+/* Menü Öğeleri */
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #ff1a1a;
+}
+
+/* Menü Kapama Butonu */
+.sidebar .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Menü Butonu - Mobil için */
+.menu-btn {
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 101; /* Menü butonunun üstte olması için */
+}
+
+/* Mobil Menüde Düzgün Yerleşim */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 250px; /* Menü genişliği */
+        left: -250px; /* Gizli başlangıç */
+    }
+
+    /* Menü Butonu */
+    .menu-btn {
+        display: block;
+    }
+}
+
+/* Masaüstü için Sidebar menüyü sabit tutuyoruz */
+@media (min-width: 769px) {
+    .sidebar {
+        left: 0;
+        top: 0;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+}
+/* Genel Stil */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+/* Üstteki Menü Barı */
+.top-bar {
+    background-color: #111;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    transition: left 0.3s ease; /* Geçiş efekti */
+}
+
+/* Menü Butonu */
+.menu-btn {
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 101; /* Menü butonunun üstte olması için */
+}
